@@ -7,9 +7,6 @@ services:
     # lets Coolify create the app before the first deploy; it is not a real image and never runs.
     image: ${IMAGE:-ghcr.io/seitenschwung/image-set-by-ci:none}
     restart: unless-stopped
-    # ROLLBACK DRILL (01.11.): the container exits at once in production; CI tests the image without
-    # this file, so it stays green. Reverted right after the drill.
-    entrypoint: ["sh", "-c", "exit 1"]
     # CrowdSec reads this container's logs through the Docker API (labels, see CLAUDE.md).
     labels:
       - crowdsec.enable=true
