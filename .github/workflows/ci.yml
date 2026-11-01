@@ -14,5 +14,5 @@ jobs:
     permissions:
       contents: read
       packages: write
-    uses: seitenschwung/template/.github/workflows/pipeline.yml@v1
+    uses: seitenschwung/template/.github/workflows/pipeline.yml@preview-apps
     secrets: inherit
